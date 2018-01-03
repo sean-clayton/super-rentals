@@ -2,10 +2,14 @@ import Controller from '@ember/controller';
 
 export default Controller.extend({
   actions: {
-    filterByCity(param) {
-      return param !== ''
-        ? this.get('store').query('rental', { city: param })
-        : this.get('store').findAll('rental');
+    filterByCity(city) {
+      return city !== ''
+        ? this.get('store')
+          .query('rental', { city })
+          .then(results => ({ query: city, results }))
+        : this.get('store')
+          .findAll('rental')
+          .then(results => ({ query: city, results }))
     }
   }
 });
