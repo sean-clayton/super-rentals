@@ -33,6 +33,6 @@ test('should list available rentals.', assert => {
   });
 });
 
-test('should filter the list of rentals by city', assert => {});
+test('should filter the list of rentals by city', () => {});
 
-test('should show the details for a selected rental', assert => {});
+test('should show the details for a selected rental', () => {});
