@@ -3,10 +3,14 @@ import moduleForAcceptance from 'super-rentals/tests/helpers/module-for-acceptan
 
 moduleForAcceptance('Acceptance | list rentals');
 
-test('visiting /list-rentals', function(assert) {
-  visit('/list-rentals');
+test('should show rentals as the home page', assert => {});
 
-  andThen(function() {
-    assert.equal(currentURL(), '/list-rentals');
-  });
-});
+test('should link to information about the company', assert => {});
+
+test('should link to contact information.', assert => {});
+
+test('should list available rentals.', assert => {});
+
+test('should filter the list of rentals by city', assert => {});
+
+test('should show the details for a selected rental', assert => {});
