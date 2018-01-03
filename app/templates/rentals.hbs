@@ -6,13 +6,7 @@
     About Us
   {{/link-to}}
 
-  {{#each model as |rental|}}
-    <article class="listing">
-      <h3>{{rental.title}}</h3>
-      <div class="detail owner"><span>Owner:</span> {{rental.owner}}</div>
-      <div class="detail owner"><span>Type:</span> {{rental.propertyType}}</div>
-      <div class="detail owner"><span>Location:</span> {{rental.city}}</div>
-      <div class="detail owner"><span>Number of bedrooms:</span> {{rental.bedrooms}}</div>
-    </article>
+  {{#each model as |rentalUnit|}}
+    {{rental-listing rental=rentalUnit}}
   {{/each}}
 </div>
