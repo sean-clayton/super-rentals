@@ -6,10 +6,18 @@ moduleForComponent('rental-property-type', 'helper:rental-property-type', {
 });
 
 // Replace this with your real tests.
-test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+test('it renders standalone if passed a non-community type', function(assert) {
+  this.set('inputValue', 'Estate');
 
   this.render(hbs`{{rental-property-type inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '1234');
+  assert.equal(this.$().text().trim(), 'Standalone');
 });
+
+test('it renders community if passed a community type', function(assert) {
+  this.set('inputValue', 'Apartment');
+
+  this.render(hbs`{{rental-property-type inputValue}}`);
+
+  assert.equal(this.$().text().trim(), 'Community');
+})
