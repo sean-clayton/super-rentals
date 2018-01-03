@@ -10,9 +10,21 @@ test('should show rentals as the home page', assert => {
   })
 });
 
-test('should link to information about the company', assert => {});
+test('should link to information about the company', assert => {
+  visit('/');
+  click('a:contains("About")');
+  andThen(() => {
+    assert.equal(currentURL(), '/about', 'should navigate to about page');
+  });
+});
 
-test('should link to contact information.', assert => {});
+test('should link to contact information.', assert => {
+  visit('/');
+  click('a:contains("Contact")');
+  andThen(() => {
+    assert.equal(currentURL(), '/contact', 'should navigate to contact page');
+  });
+});
 
 test('should list available rentals.', assert => {});
 
