@@ -1,20 +1,20 @@
-import Component from '@ember/component';
-import { debounce } from '@ember/runloop';
+import Component from "@ember/component";
+import { debounce } from "@ember/runloop";
 
 export default Component.extend({
-  classNames: ['list-filter'],
-  value: '',
+  classNames: ["list-filter"],
+  value: "",
 
   init() {
     this._super(...arguments);
-    this.get('filter')('').then(({ results }) => this.set('results', results));
+    this.get("filter")("").then(({ results }) => this.set("results", results));
   },
 
   filterItems() {
-    let filterInputValue = this.get('value');
-    let filterAction = this.get('filter');
+    let filterInputValue = this.get("value");
+    let filterAction = this.get("filter");
     filterAction(filterInputValue).then(({ query, results }) => {
-      if (query === this.get('value')) this.set('results', results)
+      if (query === this.get("value")) this.set("results", results);
     });
   },
 
